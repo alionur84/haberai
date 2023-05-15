@@ -23,7 +23,7 @@
         <div class="col-md-6">
     		<a href="{{ url_for('get_random_news') }}"> <button type="button" class="btn btn-primary">Baştan Başla</button></a> <br>
     	</div>
-    	<div class="row">
+    	
     	<div class="col-md-6">
     		<form method="POST" action="{{ url_for('display_result_scrapped') }}">
         		<input type="hidden" name="news_text" value="{{ news[0] }}">

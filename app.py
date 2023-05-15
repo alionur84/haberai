@@ -1,7 +1,7 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField, SubmitField, SelectField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Length
 from scrapper import get_news
 import random
 import requests
@@ -14,7 +14,7 @@ app.config['SECRET_KEY'] = os.environ.get("APPKEY")
 
 
 class NewsForm(FlaskForm):
-	news_text = TextAreaField("Haber Metni", validators=[DataRequired()])
+	news_text = TextAreaField("Haber Metni", validators=[DataRequired(), Length(min=800, max=5000)])
 	submit = SubmitField("Tahmin Et")
 
 class CategoryForm(FlaskForm): 
@@ -93,6 +93,19 @@ def scrapped_news():
 @app.route("/project_info")
 def project_info():
 	return render_template("project_info.html", title="Proje Bilgileri")
+
+@app.route("/qr_code")
+def qr_code():
+	return render_template("qr_code.html", title="QR Code")
+
+@app.route("/vertex_ai_video")
+def vertex_ai_video():
+	return render_template("vertex_ai_video.html", title="Vertex AI - Video")
+
+@app.route("/vertex_ai_slides")
+def vertex_ai_slides():
+	return render_template("vertex_ai_slides.html", title="Vertex AI - Slides")
+
 
 # 404 error
 @app.errorhandler(404)
