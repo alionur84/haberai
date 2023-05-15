@@ -106,6 +106,10 @@ def vertex_ai_video():
 def vertex_ai_slides():
 	return render_template("vertex_ai_slides.html", title="Vertex AI - Slides")
 
+@app.route("/lambda_slides")
+def lambda_slides():
+	return render_template("lambda_slides.html", title="Lambda - Slides")
+
 
 # 404 error
 @app.errorhandler(404)
