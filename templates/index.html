@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div>
+	<h2 align="center">Girdiğiniz Haberin Kategorisini Öğrenin</h2>
+	<h3 align="center">Hem de Yapay Zekadan :)</h3>
+	<h4 align="center">Çünkü neden olmasın</h4>
+	<br>
+	<div class="mb-3">
+	<form method="POST">
+		{{ form.hidden_tag() }}
+		<h4 align="center">Başlamak için bir haber girin</h4>
+		{{ form.news_text(class="form-control", rows="8") }}
+		<br>
+		<div class="col-md-12 text-center">
+		{{ form.submit(class="btn btn-secondary") }}
+		</div>
+	</form>
+	</div>
+</div>
+
+{% endblock %}

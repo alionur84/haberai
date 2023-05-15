@@ -1,0 +1,14 @@
+h1 {
+	color: #596578;
+	font-size: 2.5em;
+}
+
+body {
+	background: #F4F4F4;
+}
+
+#demo {
+	font-size: 12px;
+	font-family: Arial;
+	background-color: lightblue;
+}

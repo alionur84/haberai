@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>Tahmin: {{ result }}</h2>
+      {% if cat != "" %}
+      <h3>Kategori: {{ cat }}</h3>
+      {% endif %}
+      <p>{{ news_text }}</p>
+      <a href="{{ url_for('home') }}"> <button type="button" class="btn btn-primary">Baştan Başla</button></a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

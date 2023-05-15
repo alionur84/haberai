@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h3>İsterseniz sizin için BBC Türkçe'den bir haber bulabilirim.</h3>
+<form method="POST">
+	{{ form.hidden_tag() }}
+	<h4 align="center">Bir kategori seçin</h4>
+	{{ form.category(class="form-select") }}
+	<br>
+	<div class="col-md-12 text-center">
+	{{ form.submit(class="btn btn-secondary") }}
+	</div>
+</form>
+
+
+{% endblock %}
